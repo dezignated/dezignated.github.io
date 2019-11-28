@@ -139,17 +139,53 @@ h4 {
 }
 
 .project-tile {
-  display: inline-flex;
-  padding: 60px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  border: 1px #999 dotted;
+  padding: 20px;
+  font-size: 150%;
 }
 
-.project-tile:hover {
-  opacity: 0.8;
-}
 
 .project-img {
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 30vh;
+  max-width: 30vw;
+  border: #7690a3 1px solid;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  grid-gap: 20px;
+  justify-content: space-around;
+
+  background-color: #fff;
+  color: #444;
+}
+
+.container a {
+  color: #000;
+}
+
+.container a:hover {
+  cursor: pointer;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(109, 255, 158, 0.6) 30%, #fff 50%, rgba(109, 255, 158, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+
 }
 
 .contact {
@@ -177,13 +213,26 @@ h4 {
 
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
   nav ul {
     text-align: center;
   }
 
   nav ul li {
     margin: 20px;
+  }
+
+  /*.project-img {
+    max-height: 300px;
+    max-width: 300px;
+
+  }*/
+
+  .container {
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+    grid-gap: 20px;
   }
 
   .projects {
@@ -212,17 +261,34 @@ h4 {
 }
 
 
-@media only screen and (max-width: 367px) {
+@media only screen and (max-device-width: 767px) {
 
-  /*    #contact{
-    min-height:1100px;
-  } */
-  .project-tile {
-    border: 2px solid;
-    border-radius: 0;
-    width: 90px;
-    height: 20px;
-    padding: 10px;
-    line-height: normal;
+  nav {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
   }
+
+  nav a {
+    padding: 20px;
+  }
+
+  #list {
+    font-size: 2em;
+  }
+
+  /*.project-img {
+    max-height: 300px;
+    max-width: 300px;
+
+  }*/
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+  }
+
 }
